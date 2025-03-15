@@ -1,4 +1,4 @@
-"use client";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -14,7 +14,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import Link from "next/link";
 
 export default function ProfilePage() {
   return (
@@ -26,12 +25,7 @@ export default function ProfilePage() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form
-          onSubmit={() => {
-            console.log("submit");
-          }}
-          className="space-y-6"
-        >
+        <form className="space-y-6">
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -136,14 +130,10 @@ export default function ProfilePage() {
       </CardContent>
       <CardFooter className="flex justify-between">
         <Link href="/">
-          <Button variant="outline" className="cursor-pointer">
-            Back
-          </Button>
+          <Button variant="outline">Back</Button>
         </Link>
         <Link href="/onboarding/objectives">
-          <Button className="cursor-pointer">
-            Continue to Learning Objectives
-          </Button>
+          <Button>Continue to Learning Objectives</Button>
         </Link>
       </CardFooter>
     </Card>

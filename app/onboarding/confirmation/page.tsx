@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, RefreshCw } from "lucide-react";
@@ -42,15 +44,20 @@ export default function ConfirmationPage() {
             different learning goal.
           </p>
 
-          <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button variant="outline" className="flex-1">
-              <RefreshCw className="mr-2 h-4 w-4" />
-              Try Again
-            </Button>
-            <Button className="flex-1">
-              <CheckCircle className="mr-2 h-4 w-4" />
-              Confirm and Proceed
-            </Button>
+          <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 justify-between">
+            <Link href="/onboarding/objectives">
+              <Button variant="outline" className="flex-1">
+                <RefreshCw className="mr-2 h-4 w-4" />
+                Try Again
+              </Button>
+            </Link>
+
+            <Link href="/onboarding/confirmation">
+              <Button className="flex-1">
+                <CheckCircle className="mr-2 h-4 w-4" />
+                Confirm and Proceed
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

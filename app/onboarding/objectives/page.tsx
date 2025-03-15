@@ -139,14 +139,10 @@ export default function ObjectivesPage() {
       </CardContent>
       <CardFooter className="flex justify-between">
         <Link href="/onboarding/profile">
-          <Button variant="outline" className="cursor-pointer">
-            Back
-          </Button>
+          <Button variant="outline">Back</Button>
         </Link>
         <Link href="/onboarding/analysis">
-          <Button className="cursor-pointer">
-            Continue to Skills Analysis
-          </Button>
+          <Button>Continue to Skills Analysis</Button>
         </Link>
       </CardFooter>
     </Card>

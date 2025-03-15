@@ -153,14 +153,10 @@ export default function AnalysisPage() {
         </CardContent>
         <CardFooter className="flex justify-between">
           <Link href="/onboarding/objectives">
-            <Button className="cursor-pointer" variant="outline">
-              Try Again
-            </Button>
+            <Button variant="outline">Try Again</Button>
           </Link>
           <Link href="/onboarding/confirmation">
-            <Button className="cursor-pointer">
-              Proceed with This Curriculum
-            </Button>
+            <Button>Proceed with This Curriculum</Button>
           </Link>
         </CardFooter>
       </Card>
