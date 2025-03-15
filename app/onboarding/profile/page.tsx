@@ -134,7 +134,12 @@ export default function ProfilePage() {
           </div>
         </form>
       </CardContent>
-      <CardFooter className="flex justify-end">
+      <CardFooter className="flex justify-between">
+        <Link href="/">
+          <Button variant="outline" className="cursor-pointer">
+            Back
+          </Button>
+        </Link>
         <Link href="/onboarding/objectives">
           <Button className="cursor-pointer">
             Continue to Learning Objectives
