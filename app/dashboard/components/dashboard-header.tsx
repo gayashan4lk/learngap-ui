@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User } from "lucide-react";
+import { PlusCircle, User } from "lucide-react";
 
 export function DashboardHeader() {
   // Static data instead of dynamic data
@@ -22,24 +22,37 @@ export function DashboardHeader() {
         <Link href="/dashboard" className="font-medium">
           Learn Gap
         </Link>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>{userInfo.name}</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <Link href="/dashboard/settings">
-              <DropdownMenuItem>Settings</DropdownMenuItem>
+        <div className="flex justify-end gap-2">
+          <Button asChild>
+            <Link href="/onboarding">
+              <PlusCircle className="mr-2 h-4 w-4" />
+              New Curriculum
             </Link>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <Link href="/">Sign out</Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+          </Button>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full border-2 border-gray-300"
+              >
+                <User className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>{userInfo.name}</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <Link href="/dashboard/settings">
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+              </Link>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <Link href="/">Sign out</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
   );

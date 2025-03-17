@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -9,7 +11,7 @@ import {
   PlusCircle,
   Loader,
 } from "lucide-react";
-
+import { usePathname } from "next/navigation";
 const sidebarNavItems = [
   {
     title: "Dashboard",
@@ -39,8 +41,8 @@ const sidebarNavItems = [
 ];
 
 export function DashboardSidebar() {
-  // Static pathname instead of dynamic
-  const pathname = "/dashboard";
+  // Static pathname instead of dynami
+  const pathname = usePathname();
 
   return (
     <div className="hidden border-r border-l md:block md:w-56">
