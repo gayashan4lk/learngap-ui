@@ -30,6 +30,7 @@ export async function DigitalPersona() {
       </div>
     ),
     strong: (props) => <Badge variant="outline">{props.children}</Badge>,
+    hr: () => <div className="my-4 h-px bg-gray-200" />,
   };
 
   return (
