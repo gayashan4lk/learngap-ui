@@ -1,8 +1,9 @@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DigitalPersona } from "./components/digital-persona";
-import { LearningRequirement } from "./components/learning-requirement";
+import { LearningGoal } from "./components/learning-goal";
 import { GapAnalysis } from "./components/gap-analysis";
 import { PersonalizedCurriculum } from "./components/personalized-curriculum";
+import { Card } from "@/components/ui/card";
 
 export default function AnalyzesPage() {
   return (
@@ -12,22 +13,18 @@ export default function AnalyzesPage() {
       <Tabs defaultValue="digital-persona">
         <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="digital-persona">Digital Persona</TabsTrigger>
-          <TabsTrigger value="learning-requirement">
-            Learning Requirement
-          </TabsTrigger>
+          <TabsTrigger value="learning-goal">Learning Goal</TabsTrigger>
           <TabsTrigger value="gap-analysis">Gap Analysis</TabsTrigger>
           <TabsTrigger value="personalized-curriculum">
             Personalized Curriculum
           </TabsTrigger>
         </TabsList>
-
-        <DigitalPersona />
-
-        <LearningRequirement />
-
-        <GapAnalysis />
-
-        <PersonalizedCurriculum />
+        <Card className="p-4">
+          <DigitalPersona />
+          <LearningGoal />
+          <GapAnalysis />
+          <PersonalizedCurriculum />
+        </Card>
       </Tabs>
     </div>
   );
