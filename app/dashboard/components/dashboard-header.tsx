@@ -17,7 +17,7 @@ export function DashboardHeader() {
   };
 
   return (
-    <header className="border-b">
+    <header className="border">
       <div className="container mx-auto flex h-12 items-center justify-between px-4">
         <Link href="/dashboard" className="font-medium">
           Learn Gap

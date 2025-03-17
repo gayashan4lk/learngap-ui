@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Home, BookOpen, BarChart, Settings, PlusCircle } from "lucide-react";
+import {
+  Home,
+  BookOpen,
+  BarChart,
+  Settings,
+  PlusCircle,
+  Loader,
+} from "lucide-react";
 
 const sidebarNavItems = [
   {
@@ -15,9 +22,14 @@ const sidebarNavItems = [
     icon: BookOpen,
   },
   {
+    title: "My Analyzes",
+    href: "/dashboard/analyzes",
+    icon: BarChart,
+  },
+  {
     title: "Progress",
     href: "/dashboard/progress",
-    icon: BarChart,
+    icon: Loader,
   },
   {
     title: "Settings",
@@ -31,7 +43,7 @@ export function DashboardSidebar() {
   const pathname = "/dashboard";
 
   return (
-    <div className="hidden border-r md:block md:w-56">
+    <div className="hidden border-r border-l md:block md:w-56">
       <div className="flex h-full flex-col">
         <nav className="flex-1 space-y-1 p-2">
           {sidebarNavItems.map((item) => (
@@ -50,7 +62,7 @@ export function DashboardSidebar() {
         </nav>
         <div className="border-t p-2">
           <Button className="w-full justify-start" variant="outline" asChild>
-            <Link href="/onboarding">
+            <Link href="/onboarding/objectives">
               <PlusCircle className="mr-2 h-4 w-4" />
               New Curriculum
             </Link>
