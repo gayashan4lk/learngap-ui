@@ -10,6 +10,7 @@ import {
   Settings,
   PlusCircle,
   Loader,
+  MessageCircle,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 const sidebarNavItems = [
@@ -37,6 +38,11 @@ const sidebarNavItems = [
     title: "Settings",
     href: "/dashboard/settings",
     icon: Settings,
+  },
+  {
+    title: "Chat",
+    href: "/dashboard/chat",
+    icon: MessageCircle,
   },
 ];
 

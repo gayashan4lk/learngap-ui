@@ -24,7 +24,7 @@ export function DashboardHeader() {
         </Link>
         <div className="flex justify-end gap-2">
           <Button asChild>
-            <Link href="/onboarding">
+            <Link href="/onboarding/objectives">
               <PlusCircle className="mr-2 h-4 w-4" />
               New Curriculum
             </Link>

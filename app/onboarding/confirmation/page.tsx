@@ -52,7 +52,7 @@ export default function ConfirmationPage() {
               </Button>
             </Link>
 
-            <Link href="/onboarding/confirmation">
+            <Link href="/dashboard">
               <Button className="flex-1">
                 <CheckCircle className="mr-2 h-4 w-4" />
                 Confirm and Proceed
