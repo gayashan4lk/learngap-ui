@@ -19,7 +19,7 @@ export default function ObjectivesPage() {
     <Card className="w-full">
       <CardHeader>
         <CardTitle className="text-2xl">
-          Define Your Learning Objectives
+          Describe Your Learning Objectives
         </CardTitle>
         <CardDescription>
           Help us understand what you want to learn so we can create a

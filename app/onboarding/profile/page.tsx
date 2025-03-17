@@ -21,6 +21,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 // Define interface matching the Pydantic model
 interface UserPersonaRequest {
@@ -35,6 +36,7 @@ interface UserPersonaRequest {
 }
 
 export default function ProfilePage() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -50,6 +52,7 @@ export default function ProfilePage() {
     },
     onSuccess: () => {
       toast.success("Profile successfully submitted!");
+      router.push("/onboarding/objectives");
     },
     onError: (error) => {
       toast.error(`Error submitting profile: ${error.message}`);
@@ -57,6 +60,7 @@ export default function ProfilePage() {
   });
 
   const onSubmit = (data: UserPersonaRequest) => {
+    toast.info("Analysing...");
     // Map form fields to match the Pydantic model
     const formData: UserPersonaRequest = {
       user_name: data.user_name,
@@ -212,14 +216,14 @@ export default function ProfilePage() {
                   disabled={isSubmitting || submitPersona.isPending}
                 >
                   {isSubmitting || submitPersona.isPending
-                    ? "Submitting..."
-                    : "Submit Profile"}
+                    ? "Loading..."
+                    : "Continue to Learning Objectives"}
                 </Button>
-                <Link href="/onboarding/objectives">
+                {/* <Link href="/onboarding/objectives">
                   <Button type="button" variant="secondary">
                     Continue to Learning Objectives
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </form>
