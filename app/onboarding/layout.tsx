@@ -12,7 +12,7 @@ export default function OnboardingLayout({
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <div className="mb-8">
+        <div className="mb-4 py-4">
           <h1 className="text-center text-3xl font-bold">
             Create Your Learning Path
           </h1>
