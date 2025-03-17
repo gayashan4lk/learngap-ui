@@ -1,7 +1,8 @@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { NotificationPreference } from "../components/notification-preference";
-import { AccountSettingsForm } from "../components/account-settings-form";
-import { ProfileForm } from "../components/profile-form";
+import { DigitalPersona } from "./components/digital-persona";
+import { LearningRequirement } from "./components/learning-requirement";
+import { GapAnalysis } from "./components/gap-analysis";
+import { PersonalizedCurriculum } from "./components/personalized-curriculum";
 
 export default function AnalyzesPage() {
   return (
@@ -20,11 +21,13 @@ export default function AnalyzesPage() {
           </TabsTrigger>
         </TabsList>
 
-        <ProfileForm />
+        <DigitalPersona />
 
-        <AccountSettingsForm />
+        <LearningRequirement />
 
-        <NotificationPreference />
+        <GapAnalysis />
+
+        <PersonalizedCurriculum />
       </Tabs>
     </div>
   );
