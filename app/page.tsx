@@ -36,7 +36,7 @@ export default function Home() {
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-white py-8">
                     Close Your Skill Gaps with AI
                   </h1>
-                  <p className="mx-auto max-w-[700px] text-purple-600 md:text-xl dark:text-gray-400">
+                  <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl dark:text-gray-400">
                     Learn Gap creates personalized learning paths based on your
                     goals and current skills. Advance your career with targeted
                     curriculum designed just for you.
@@ -47,7 +47,7 @@ export default function Home() {
                     <Link href="/onboarding/profile">
                       <Button
                         size="lg"
-                        className="text-4xl cursor-pointer bg-gradient-to-r from-purple-700 to-blue-700 text-white p-8 antialiased "
+                        className="text-4xl cursor-pointer bg-gradient-to-r from-purple-700 to-blue-700 text-white p-8 antialiased shadow-lg"
                       >
                         Start Your Learning Journey
                       </Button>
