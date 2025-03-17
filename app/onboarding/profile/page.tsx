@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Button } from "@/components/ui/button";
@@ -51,16 +51,15 @@ export default function ProfilePage() {
       );
     },
     onSuccess: () => {
-      toast.success("Profile successfully submitted!");
+      toast.success("Analysing your profile...");
       router.push("/onboarding/objectives");
     },
     onError: (error) => {
-      toast.error(`Error submitting profile: ${error.message}`);
+      toast.error(`Error analysing profile: ${error.message}`);
     },
   });
 
   const onSubmit = (data: UserPersonaRequest) => {
-    toast.info("Analysing...");
     // Map form fields to match the Pydantic model
     const formData: UserPersonaRequest = {
       user_name: data.user_name,
@@ -78,7 +77,6 @@ export default function ProfilePage() {
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={3000} />
       <Card className="w-full">
         <CardHeader>
           <CardTitle className="text-2xl">Create Your Profile</CardTitle>
