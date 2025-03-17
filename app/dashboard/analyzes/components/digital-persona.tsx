@@ -14,7 +14,7 @@ export async function DigitalPersona() {
 
   return (
     <TabsContent value="digital-persona">
-      <div className="prose prose-slate max-w-none">
+      <div className="prose prose-headings:text-primary prose-a:text-blue-600 prose-strong:text-accent max-w-none">
         <ReactMarkdown>{markdownContent}</ReactMarkdown>
       </div>
     </TabsContent>
