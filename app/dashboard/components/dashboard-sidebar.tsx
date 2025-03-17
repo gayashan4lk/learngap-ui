@@ -68,14 +68,6 @@ export function DashboardSidebar() {
             </Link>
           ))}
         </nav>
-        <div className="border-t p-2">
-          <Button className="w-full justify-start" variant="outline" asChild>
-            <Link href="/onboarding/objectives">
-              <PlusCircle className="mr-2 h-4 w-4" />
-              New Curriculum
-            </Link>
-          </Button>
-        </div>
       </div>
     </div>
   );
