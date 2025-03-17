@@ -8,7 +8,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div className="max-w-screen mx-auto">
       <div className="flex min-h-screen flex-col">
         <div className="fixed top-0 left-0 right-0 z-50 bg-white">
           <DashboardHeader />
