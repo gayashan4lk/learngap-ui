@@ -1,35 +1,34 @@
+"use client";
+
+import React from "react";
 import ReactMarkdown from "react-markdown";
-import { promises as fs } from "fs";
-import path from "path";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Components } from "react-markdown";
-import { TabsContent } from "@/components/ui/tabs";
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { Badge } from "@/components/ui/badge";
 
-async function getMarkdownContent() {
-  const markdownPath = path.join(process.cwd(), "mock_data/digital-persona.md");
-  return await fs.readFile(markdownPath, "utf8");
+interface MarkdownRendererProps {
+  content: string;
+  className?: string;
 }
 
-export async function DigitalPersona() {
-  const markdownContent = await getMarkdownContent();
-
+export function MarkdownRenderer({
+  content,
+  className = "",
+}: MarkdownRendererProps) {
   const components: Components = {
     h1: (props) => (
-      <h1 className="text-3xl font-bold text-primary mb-4 pb-4 border-b">
+      <h1 className="text-3xl font-bold text-primary mb-6 pb-2 border-b">
         {props.children}
       </h1>
     ),
     h2: (props) => (
-      <h2 className="text-2xl font-semibold text-primary/80 mt-4 mb-4">
+      <h2 className="text-2xl font-semibold text-primary/80 mt-8 mb-4">
         {props.children}
       </h2>
     ),
     h3: (props) => (
-      <h3 className="text-xl font-medium text-primary/70 mt-4 mb-3">
+      <h3 className="text-xl font-medium text-primary/70 mt-6 mb-3">
         {props.children}
       </h3>
     ),
@@ -86,7 +85,9 @@ export async function DigitalPersona() {
         {props.children}
       </Badge>
     ),
-    hr: () => <div className="my-8 h-px bg-gray-200" />,
+    hr: () => (
+      <div className="my-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+    ),
     code: (props) => (
       <code className="relative rounded bg-gray-100 py-[0.2rem] px-[0.3rem] font-mono text-sm text-gray-800">
         {props.children}
@@ -100,20 +101,14 @@ export async function DigitalPersona() {
   };
 
   return (
-    <TabsContent value="digital-persona">
-      <Card className="border-gray-200 shadow-sm">
-        <CardContent className="p-6">
-          <div className="prose max-w-none">
-            <ReactMarkdown
-              components={components}
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeHighlight]}
-            >
-              {markdownContent}
-            </ReactMarkdown>
-          </div>
-        </CardContent>
-      </Card>
-    </TabsContent>
+    <div className={`prose max-w-none ${className}`}>
+      <ReactMarkdown
+        components={components}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeHighlight]}
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 }
